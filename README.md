@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# Jarurat Care - Patient Records Dashboard 🩺
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive and user-friendly patient management dashboard built with React. This application allows users to view a list of patients, search for specific individuals, view detailed information in a modal, and add new patients to the list.
 
-## Available Scripts
+## Screenshot
 
-In the project directory, you can run:
+Here's what the main dashboard looks like:
 
-### `npm start`
+<img width="1919" height="1079" alt="Screenshot 2025-10-15 111827" src="https://github.com/user-attachments/assets/90038df3-6c4a-44ff-87b5-c0d75fe0c783" />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✨ Features
 
-### `npm run build`
+* **Responsive Design:** A clean UI that works seamlessly on both desktop and mobile devices.
+* **Fetch Patient Data:** Fetches initial patient data from a public API (`JSONPlaceholder`).
+* **Loading & Error States:** Provides user feedback while fetching data or if an error occurs.
+* **Search Functionality:** Instantly filter patients by name using the search bar.
+* **Patient Details Modal:** Click 'View Details' on any patient card to see more information in a pop-up modal without leaving the page.
+* **Add New Patient:** A form to add new patients to the list (updates the local state).
+* **Component-Based Architecture:** Built with reusable React components for maintainability.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* **Frontend:** React.js (with Hooks)
+* **Styling:** Plain CSS with Flexbox and Grid for responsiveness.
+* **API:** [JSONPlaceholder](https://jsonplaceholder.typicode.com/) for mock patient data.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Follow these instructions to get a copy of the project up and running on your local machine.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### **Prerequisites**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You need to have [Node.js](https://nodejs.org/) and `npm` (or `yarn`) installed on your system.
 
-## Learn More
+### **Setup Instructions**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1.  **Clone the repository (or download the code):**
+    If you have the project files, you can skip to step 2.
+    ```bash
+    git clone [https://github.com/your-username/jarurat-care-dashboard.git](https://github.com/your-username/jarurat-care-dashboard.git)
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2.  **Navigate to the project directory:**
+    ```bash
+    cd jarurat-care-dashboard
+    ```
 
-### Code Splitting
+3.  **Install dependencies:**
+    This command will install all the necessary packages for React.
+    ```bash
+    npm install
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4.  **Run the application:**
+    This will start the development server and open the application in your default browser at `http://localhost:3000`.
+    ```bash
+    npm start
+    ```
 
-### Analyzing the Bundle Size
+The application will automatically reload if you make any changes to the source files.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 📂 File Structure & Component Breakdown
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+All the application logic is contained within the `src/` directory.
 
-### Advanced Configuration
+* `App.js`: This is the main file that holds all the components and the core logic.
+    * `App()`: The root component that handles page navigation (Home, Patients, About).
+    * `Header`: A simple component for the logo and navigation bar.
+    * `PatientsPage`: The main component for the "Patients" screen. It manages all patient-related state and logic, including:
+        * Fetching data from the API.
+        * Handling search/filter functionality.
+        * Managing the loading, error, and selected patient states.
+    * `PatientCard`: A reusable component to display summary information for a single patient in the grid.
+    * `PatientModal`: The modal component that displays detailed information about a selected patient.
+    * `AddPatientForm`: A bonus component that provides a form to add a new patient to the local state.
+* `App.css`: Contains all the CSS styles for the components, including media queries for responsiveness.
+* `index.css`: Global styles applied to the entire application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## ⚙️ How It Works
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### **1. Data Fetching**
 
-### `npm run build` fails to minify
+* When the `PatientsPage` component mounts, a `useEffect` hook is triggered.
+* It calls an `async` function `fetchPatients` which sets a `loading` state to `true`.
+* It uses the `fetch` API to get user data from `JSONPlaceholder`. To meet the project requirements, a random age is programmatically added to each "patient" object.
+* On success, the data is stored in the `patients` state, and `loading` is set to `false`.
+* If the fetch fails, an `error` state is set and displayed to the user.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### **2. State Management**
+
+The application uses React Hooks (`useState` and `useEffect`) for all state management:
+
+* `patients`: An array that stores the original, complete list of patients fetched from the API.
+* `filteredPatients`: An array that stores the patients to be displayed after applying the search filter.
+* `searchQuery`: A string that holds the current value of the search input field.
+* `selectedPatient`: An object that stores the data of the patient whose details are being viewed in the modal. It's `null` when the modal is closed.
+* `loading`: A boolean to track the API call status.
+* `error`: A string to hold any error messages.
+
+### **3. Search and Filtering**
+
+* A dedicated `useEffect` hook listens for changes to the `searchQuery` or the main `patients` array.
+* Whenever a change is detected, it filters the `patients` array based on whether a patient's name includes the `searchQuery` string.
+* The result is then saved to the `filteredPatients` state, which causes the UI to re-render with the filtered list.
+
+### **4. Adding a New Patient**
+
+* The `AddPatientForm` component manages its own internal state for the form inputs.
+* When the form is submitted, it creates a new patient object and calls the `onAddPatient` function passed down from `PatientsPage`.
+* This function adds the new patient to the beginning of the main `patients` array, which automatically triggers the filtering `useEffect` to update the displayed list.

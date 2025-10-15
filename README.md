@@ -8,11 +8,12 @@ Here's what the main dashboard looks like:
 
 <img width="1919" height="1079" alt="Screenshot 2025-10-15 111827" src="https://github.com/user-attachments/assets/90038df3-6c4a-44ff-87b5-c0d75fe0c783" />
 
+<img width="1919" height="1079" alt="Screenshot 2025-10-15 111833" src="https://github.com/user-attachments/assets/4c4d6b60-930f-4ac6-b521-6cba757f9a2b" />
 
 
 ---
 
-## ✨ Features
+##  Features
 
 * **Responsive Design:** A clean UI that works seamlessly on both desktop and mobile devices.
 * **Fetch Patient Data:** Fetches initial patient data from a public API (`JSONPlaceholder`).
@@ -24,7 +25,7 @@ Here's what the main dashboard looks like:
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * **Frontend:** React.js (with Hooks)
 * **Styling:** Plain CSS with Flexbox and Grid for responsiveness.
@@ -32,7 +33,7 @@ Here's what the main dashboard looks like:
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 Follow these instructions to get a copy of the project up and running on your local machine.
 
@@ -69,7 +70,7 @@ The application will automatically reload if you make any changes to the source 
 
 ---
 
-## 📂 File Structure & Component Breakdown
+##  File Structure & Component Breakdown
 
 All the application logic is contained within the `src/` directory.
 
@@ -88,7 +89,7 @@ All the application logic is contained within the `src/` directory.
 
 ---
 
-## ⚙️ How It Works
+##  How It Works
 
 ### **1. Data Fetching**
 

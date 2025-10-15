@@ -46,7 +46,7 @@ You need to have [Node.js](https://nodejs.org/) and `npm` (or `yarn`) installed 
 1.  **Clone the repository (or download the code):**
     If you have the project files, you can skip to step 2.
     ```bash
-    git clone [https://github.com/your-username/jarurat-care-dashboard.git](https://github.com/your-username/jarurat-care-dashboard.git)
+    git clone [https://github.com/ABHISHEK27Y/jarurat-care-dashboard.git][(https://github.com/ABHISHEK27Y/jarurat-care-dashboard.git)]
     ```
 
 2.  **Navigate to the project directory:**
